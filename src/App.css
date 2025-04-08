@@ -1,0 +1,277 @@
+.App {
+  text-align: left;
+  margin: auto;
+  }
+.App-Content{
+  text-align: left;
+  margin-top: 20px;
+}
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.ampx-input__container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.ampx-input {
+  outline: none;
+  border: 0;
+  border-bottom: 1px solid #808080;
+  height: 30px;
+  flex: 1;
+  display: block;
+  margin-top: 0;
+  padding: 2px 2px 1px 2px;
+  line-height: 26px;
+  font-size: 14px;
+  height: 30px;
+  background: none;
+  width: 100%;
+}
+
+.ampx-input__label,
+.ampx-input__description {
+  font-size: 11px;
+  color: #808080;
+}
+
+.ampx-input__description {
+  margin: 4px 0 0 0;
+}
+.ampx-input:focus {
+  outline: none;
+  border-bottom: 2px solid #039be5;
+}
+
+.ampx-input__container--error .ampx-input__description {
+  color: #ff3366;
+}
+
+.ampx-input:invalid {
+  border-color: #ff3366;
+  box-shadow: none;
+  -moz-box-shadow: none;
+}
+
+.ampx-input__container--error .ampx-input {
+  border-color: #ff3366;
+}
+
+.ampx-input__container--disabled {
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.image-grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px; 
+  grid-auto-rows: 200px; 
+}
+
+/* Individual tile (each image containers) */
+.image-tile {
+  overflow: hidden; 
+  padding: 15px;
+}
+
+/* Image inside the tile */
+.image-tile img {
+  width: 100%;
+  height: 100%;
+  display: block; 
+   object-fit: contain;  
+}
+/* Container for the entire grid of tiles */
+.image-grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 fixed columns */
+  gap: 16px; /* Space between the grid tiles */
+  padding: 16px;
+  width: 100%; /* Ensures the grid takes up the full width of the container */
+  box-sizing: border-box; /* Makes sure padding is included in the element's total width */
+}
+
+/* Individual tile (each image container) */
+.image-tile {
+  position: relative; /* Makes sure the buttons can be positioned absolutely inside */
+  overflow: hidden; /* Prevents overflow of the image */
+  border-radius: 8px; /* Rounded corners for the tiles */
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Light shadow effect around tiles */
+  height: 200px; /* Set a fixed height for the tiles */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s;
+}
+
+/* Hover effect to show buttons */
+.image-tile:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Image inside the tile */
+.image-tile img {
+  width: 100%;
+  height: 100%;
+  display: block; /* Ensures the image doesn’t stretch */
+  object-fit: contain; /* Ensures the image covers the tile without distortion */
+}
+
+/* Button container for Edit and Delete buttons */
+.button-container {
+  position: absolute; /* Position the buttons over the image */
+  top: 10px;
+  left: 10px; /* Position buttons at the top-left corner */
+  display: flex;
+  gap: 8px;
+  visibility: hidden; /* Hide buttons by default */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Show the buttons when the image is hovered */
+.image-tile:hover .button-container {
+  visibility: visible;
+  opacity: 1; /* Fade in the buttons when hovered */
+}
+
+/* Style for edit and delete buttons */
+.button {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: opacity 0.3s;
+}
+
+.button:hover {
+  opacity: 1;
+}
+.filename {
+  padding: 8px;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  font-weight: bold;
+}
+
+.search-container {
+  position: relative;
+  width: 250px;
+  display: flex;
+  align-items: center;
+}
+
+
+.search-box {
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  width: 250px; 
+}
+
+
+.search-btn {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+
+.search-btn i {
+  font-size: 16px;
+  color: #ddd8d8;
+}
+
+
+.search-box:focus {
+  border-color: #007bff;
+  outline: none;
+}
+.reset-btn {
+  padding: 8px 12px;
+  background-color: #312928;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.reset-btn:hover {
+  background-color: #d32f2f;
+}
+.add-image-button {
+  font-size: 2rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.close-modal-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #000;
+}
+.select-image-button {
+  position: absolute;
+  top: 50px; 
+  right: 50px;
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
