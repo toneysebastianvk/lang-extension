@@ -43,6 +43,7 @@ function App() {
       try {
         console.log("enter initializeExtension");
         const sdk = await init();
+        console.log("sdksdksdk= ", sdk)
         setExtension(sdk);
       } catch (error) {
         console.log("Failed to initialize extension:", error.message);
