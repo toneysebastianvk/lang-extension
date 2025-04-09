@@ -53,7 +53,7 @@ function App() {
     initializeExtension();
   }, []);
 
-  return <>hiiii new2</>;
+  return <>hiiii new3</>;
 }
 
 export default App;
