@@ -13,15 +13,16 @@ function App() {
   useEffect(() => {
     const setFiedExtension = async () => {
       try {
-        const response = await extension.field.setValue(
-          contentItem?.locale
-        );
-        console.log("setFiedExtension", response);
+        const response = await extension.field.setValue(contentItem?.locale);
+        console.log("setFiedExtension", {
+          locale: contentItem?.locale,
+          response,
+        });
       } catch (err) {
         console.log("Error setting field value:", err.message);
       }
     };
-    if (contentItem?.locale) {
+    if (!!contentItem?.locale && !!extension) {
       setFiedExtension();
     }
   }, [contentItem]);
@@ -51,7 +52,7 @@ function App() {
     initializeExtension();
   }, []);
 
-  return <>hiiii new1</>;
+  return <>hiiii new2</>;
 }
 
 export default App;
