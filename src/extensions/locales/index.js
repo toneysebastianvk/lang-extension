@@ -44,6 +44,7 @@ function LocalesExtn() {
         console.log("enter initializeExtension");
         const sdk = await init();
         console.log("sdksdksdk= ", sdk)
+        console.log("paramsparams= ", sdk.params);
         setExtension(sdk);
       } catch (error) {
         console.log("Failed to initialize extension:", error.message);
